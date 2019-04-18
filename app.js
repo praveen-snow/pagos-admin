@@ -5,7 +5,8 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/pagos-product')
+var mongodb_uri = process.env.MONGODB_URI || 'mongodb://localhost/pagos-product';
+mongoose.connect(mongodb_uri)
   .then(() =>  console.log('connection succesful'))
   .catch((err) => console.error(err));
 
