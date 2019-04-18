@@ -19,7 +19,7 @@ export class BookCreateComponent implements OnInit {
   color: string = '';
   price: String = '';
   coupon: String = '';
-
+  matcher: any;
   private base64textString: String = "";
   public imageList: any = [];
 
