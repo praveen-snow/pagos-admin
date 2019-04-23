@@ -1,13 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ApiService } from '../api.service';
-import { FormControl, FormGroupDirective, FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-book-create',
   templateUrl: './book-create.component.html',
   styleUrls: ['./book-create.component.css']
 })
+
 export class BookCreateComponent implements OnInit {
 
   productForm: FormGroup;
@@ -15,12 +16,14 @@ export class BookCreateComponent implements OnInit {
   title: string = '';
   description: string = '';
   model: string = '';
-  material: string = '';
   color: string = '';
   price: String = '';
   coupon: String = '';
+  small: number = 0;
+  medium: number = 0;
+  large: number = 0;
+  xlarge: number = 0;
   matcher: any;
-  private base64textString: String = "";
   public imageList: any = [];
 
   constructor(private router: Router, private api: ApiService, private formBuilder: FormBuilder) { }
@@ -31,30 +34,14 @@ export class BookCreateComponent implements OnInit {
       'title': [null, Validators.required],
       'description': [null, Validators.required],
       'model': [null, Validators.required],
-      'material': [null, Validators.required],
       'color': [null, Validators.required],
       'price': [null, Validators.required],
-      'coupon': [null, Validators.required]
+      'coupon': [null, Validators.required],
+      'small': [null, Validators.required],
+      'medium': [null, Validators.required],
+      'large': [null, Validators.required],
+      'xlarge': [null, Validators.required]
     });
-  }
-
-
-
-  handleFileSelect(evt) {
-    var files = evt.target.files;
-    var file = files[0];
-    if (files && file) {
-      var reader = new FileReader();
-      reader.onload = this._handleReaderLoaded.bind(this);
-      reader.readAsBinaryString(file);
-    }
-  }
-
-  _handleReaderLoaded(readerEvt) {
-    var binaryString = readerEvt.target.result;
-    this.base64textString = btoa(binaryString);
-    this.imageList.push({image:this.base64textString});
-    // console.log(btoa(binaryString));
   }
 
   checkProperties(obj) {
@@ -67,7 +54,7 @@ export class BookCreateComponent implements OnInit {
 
   onFormSubmit(form: any) {
     const flag = this.checkProperties(form);
-    if(flag) return;
+    if (flag) return;
     form.images = this.imageList;
     this.api.postProduct(form)
       .subscribe(res => {
@@ -76,5 +63,15 @@ export class BookCreateComponent implements OnInit {
       }, (err) => {
         console.log(err);
       });
+  }
+
+  changeInModelValue(value, index) {
+    this.imageList[index].image = value;
+  }
+
+  addNewImage() {
+    this.imageList.push({
+      image: ''
+    });
   }
 }

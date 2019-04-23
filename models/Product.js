@@ -9,15 +9,13 @@ var ProductSchema = new mongoose.Schema({
       image: String
     }
   ],
-  material: String,
   color: String,
   description: String,
   washCare: String,
-  inventory:[{
-    quantity: Number,
-    size: String,
-    discount: String
-  }],
+  small: Number,
+  medium: Number,
+  large: Number,
+  xlarge: Number,
   price: String,
   coupon: String,
   updated_date: { type: Date, default: Date.now },

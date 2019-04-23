@@ -293,7 +293,7 @@ module.exports = ".example-form {\n  min-width: 150px;\n  max-width: 500px;\n  w
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"button-row\">\n  <a mat-raised-button color=\"primary\" [routerLink]=\"['/products']\">\n    <mat-icon>list</mat-icon>\n  </a>\n</div>\n<form [formGroup]=\"productForm\" (ngSubmit)=\"onFormSubmit(productForm.value)\">\n  <mat-form-field class=\"example-full-width\">\n    <input matInput placeholder=\"SKU\" formControlName=\"sku\" [errorStateMatcher]=\"matcher\">\n    <mat-error>\n      <span *ngIf=\"!productForm.get('sku').valid && productForm.get('sku').touched\">Please enter sku</span>\n    </mat-error>\n  </mat-form-field>\n  <mat-form-field class=\"example-full-width\">\n    <input matInput placeholder=\"Title\" formControlName=\"title\" [errorStateMatcher]=\"matcher\">\n    <mat-error>\n      <span *ngIf=\"!productForm.get('title').valid && productForm.get('title').touched\">Please enter product title</span>\n    </mat-error>\n  </mat-form-field>\n  <mat-form-field class=\"example-full-width\">\n    <input matInput placeholder=\"Model\" formControlName=\"model\" [errorStateMatcher]=\"matcher\">\n    <mat-error>\n      <span *ngIf=\"!productForm.get('model').valid && productForm.get('model').touched\">Please enter product model</span>\n    </mat-error>\n  </mat-form-field>\n  <mat-form-field class=\"example-full-width\">\n    <textarea matInput placeholder=\"Description\" formControlName=\"description\" [errorStateMatcher]=\"matcher\"></textarea>\n    <mat-error>\n      <span *ngIf=\"!productForm.get('description').valid && productForm.get('description').touched\">Please enter\n        product description</span>\n    </mat-error>\n  </mat-form-field>\n  <mat-form-field class=\"example-full-width\">\n    <input matInput placeholder=\"Material\" formControlName=\"material\" [errorStateMatcher]=\"matcher\">\n    <mat-error>\n      <span *ngIf=\"!productForm.get('material').valid && productForm.get('material').touched\">Please enter material</span>\n    </mat-error>\n  </mat-form-field>\n  <mat-form-field class=\"example-full-width\">\n    <input matInput placeholder=\"Color\" formControlName=\"color\" [errorStateMatcher]=\"matcher\">\n    <mat-error>\n      <span *ngIf=\"!productForm.get('color').valid && productForm.get('color').touched\">Please enter color</span>\n    </mat-error>\n  </mat-form-field>\n  <mat-form-field class=\"example-full-width\">\n    <input matInput placeholder=\"Price\" formControlName=\"price\" [errorStateMatcher]=\"matcher\">\n    <mat-error>\n      <span *ngIf=\"!productForm.get('price').valid && productForm.get('price').touched\">Please enter price</span>\n    </mat-error>\n  </mat-form-field>\n  <mat-form-field class=\"example-full-width\">\n    <input matInput placeholder=\"Coupon\" formControlName=\"coupon\" [errorStateMatcher]=\"matcher\">\n    <mat-error>\n      <span *ngIf=\"!productForm.get('coupon').valid && productForm.get('coupon').touched\">Please enter color</span>\n    </mat-error>\n  </mat-form-field>\n  <!-- <div class=\"container\">\n    <label class=\"mat-form-field-label\">Images</label>\n    <button md-raised-button color=\"primary\" (click)=\"fileInput.click()\">Upload</button>\n    <input hidden type=\"file\" #fileInput accept=\"image/*\" (change)=\"handleFileSelect($event)\">\n  </div> -->\n  <div class=\"row\">\n    <div class=\"column\" *ngFor=\"let item of imageList\">\n      <img style=\"width:40%\" src=\"data:image/jpg;base64,{{item.image}}\" />\n    </div>\n  </div>\n  <div class=\"button-row\">\n    <button type=\"submit\" [disabled]=\"!productForm.valid\" mat-raised-button color=\"primary\">\n      <mat-icon>save</mat-icon>\n    </button>\n  </div>\n</form>"
+module.exports = "<div class=\"button-row\">\n  <a mat-raised-button color=\"primary\" [routerLink]=\"['/products']\">\n    <mat-icon>list</mat-icon>\n  </a>\n</div>\n<form [formGroup]=\"productForm\" (ngSubmit)=\"onFormSubmit(productForm.value)\">\n  <mat-form-field class=\"example-full-width\">\n    <input matInput placeholder=\"SKU\" formControlName=\"sku\" [errorStateMatcher]=\"matcher\">\n    <mat-error>\n      <span *ngIf=\"!productForm.get('sku').valid && productForm.get('sku').touched\">Please enter sku</span>\n    </mat-error>\n  </mat-form-field>\n  <mat-form-field class=\"example-full-width\">\n    <input matInput placeholder=\"Title\" formControlName=\"title\" [errorStateMatcher]=\"matcher\">\n    <mat-error>\n      <span *ngIf=\"!productForm.get('title').valid && productForm.get('title').touched\">Please enter product\n        title</span>\n    </mat-error>\n  </mat-form-field>\n  <mat-form-field class=\"example-full-width\">\n    <input matInput placeholder=\"Model\" formControlName=\"model\" [errorStateMatcher]=\"matcher\">\n    <mat-error>\n      <span *ngIf=\"!productForm.get('model').valid && productForm.get('model').touched\">Please enter product\n        model</span>\n    </mat-error>\n  </mat-form-field>\n  <mat-form-field class=\"example-full-width\">\n    <textarea matInput placeholder=\"Description\" formControlName=\"description\" [errorStateMatcher]=\"matcher\"></textarea>\n    <mat-error>\n      <span *ngIf=\"!productForm.get('description').valid && productForm.get('description').touched\">Please enter\n        product description</span>\n    </mat-error>\n  </mat-form-field>\n  <mat-form-field class=\"example-full-width\">\n    <input matInput placeholder=\"Color\" formControlName=\"color\" [errorStateMatcher]=\"matcher\">\n    <mat-error>\n      <span *ngIf=\"!productForm.get('color').valid && productForm.get('color').touched\">Please enter color</span>\n    </mat-error>\n  </mat-form-field>\n  <mat-form-field class=\"example-full-width\">\n    <input matInput placeholder=\"Price\" formControlName=\"price\" [errorStateMatcher]=\"matcher\">\n    <mat-error>\n      <span *ngIf=\"!productForm.get('price').valid && productForm.get('price').touched\">Please enter price</span>\n    </mat-error>\n  </mat-form-field>\n  <mat-form-field class=\"example-full-width\">\n    <input matInput placeholder=\"Coupon\" formControlName=\"coupon\" [errorStateMatcher]=\"matcher\">\n    <mat-error>\n      <span *ngIf=\"!productForm.get('coupon').valid && productForm.get('coupon').touched\">Please enter color</span>\n    </mat-error>\n  </mat-form-field>\n  <mat-form-field class=\"example-full-width\">\n    <input matInput placeholder=\"Small\" formControlName=\"small\" [errorStateMatcher]=\"matcher\">\n    <mat-error>\n      <span *ngIf=\"!productForm.get('small').valid && productForm.get('small').touched\">Please enter\n        size small</span>\n    </mat-error>\n  </mat-form-field>\n  <mat-form-field class=\"example-full-width\">\n    <input matInput placeholder=\"Medium\" formControlName=\"medium\" [errorStateMatcher]=\"matcher\">\n    <mat-error>\n      <span *ngIf=\"!productForm.get('medium').valid && productForm.get('medium').touched\">Please enter\n        size medium</span>\n    </mat-error>\n  </mat-form-field>\n  <mat-form-field class=\"example-full-width\">\n    <input matInput placeholder=\"Large\" formControlName=\"large\" [errorStateMatcher]=\"matcher\">\n    <mat-error>\n      <span *ngIf=\"!productForm.get('large').valid && productForm.get('large').touched\">Please enter\n        size large</span>\n    </mat-error>\n  </mat-form-field>\n  <mat-form-field class=\"example-full-width\">\n    <input matInput placeholder=\"X-Large\" formControlName=\"xlarge\" [errorStateMatcher]=\"matcher\">\n    <mat-error>\n      <span *ngIf=\"!productForm.get('xlarge').valid && productForm.get('xlarge').touched\">Please enter\n        size x-large</span>\n    </mat-error>\n  </mat-form-field>\n  <mat-form-field *ngFor=\"let item of imageList; let i = index;\" class=\"example-full-width\">\n    <input matInput [ngModelOptions]=\"{standalone: true}\" [(ngModel)]=\"item.image\" (ngModelChange)=\"changeInModelValue(item.image, i)\" placeholder=\"Image\">\n  </mat-form-field>\n  <div class=\"button-row\">\n    <button (click)=\"addNewImage()\" type=\"button\" mat-raised-button color=\"primary\">\n      <mat-icon>add_a_photo</mat-icon>\n    </button>\n  </div>\n  <div class=\"button-row\">\n    <button type=\"submit\" mat-raised-button color=\"primary\">\n      <mat-icon>save</mat-icon>\n    </button>\n  </div>\n</form>"
 
 /***/ }),
 
@@ -333,11 +333,13 @@ var BookCreateComponent = /** @class */ (function () {
         this.title = '';
         this.description = '';
         this.model = '';
-        this.material = '';
         this.color = '';
         this.price = '';
         this.coupon = '';
-        this.base64textString = "";
+        this.small = 0;
+        this.medium = 0;
+        this.large = 0;
+        this.xlarge = 0;
         this.imageList = [];
     }
     BookCreateComponent.prototype.ngOnInit = function () {
@@ -346,26 +348,14 @@ var BookCreateComponent = /** @class */ (function () {
             'title': [null, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required],
             'description': [null, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required],
             'model': [null, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required],
-            'material': [null, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required],
             'color': [null, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required],
             'price': [null, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required],
-            'coupon': [null, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required]
+            'coupon': [null, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required],
+            'small': [null, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required],
+            'medium': [null, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required],
+            'large': [null, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required],
+            'xlarge': [null, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required]
         });
-    };
-    BookCreateComponent.prototype.handleFileSelect = function (evt) {
-        var files = evt.target.files;
-        var file = files[0];
-        if (files && file) {
-            var reader = new FileReader();
-            reader.onload = this._handleReaderLoaded.bind(this);
-            reader.readAsBinaryString(file);
-        }
-    };
-    BookCreateComponent.prototype._handleReaderLoaded = function (readerEvt) {
-        var binaryString = readerEvt.target.result;
-        this.base64textString = btoa(binaryString);
-        this.imageList.push({ image: this.base64textString });
-        // console.log(btoa(binaryString));
     };
     BookCreateComponent.prototype.checkProperties = function (obj) {
         for (var key in obj) {
@@ -386,6 +376,14 @@ var BookCreateComponent = /** @class */ (function () {
             _this.router.navigate(['/product-details', id]);
         }, function (err) {
             console.log(err);
+        });
+    };
+    BookCreateComponent.prototype.changeInModelValue = function (value, index) {
+        this.imageList[index].image = value;
+    };
+    BookCreateComponent.prototype.addNewImage = function () {
+        this.imageList.push({
+            image: ''
         });
     };
     BookCreateComponent = __decorate([
@@ -421,7 +419,7 @@ module.exports = ".example-card {\n  max-width: 500px;\n}\n\n.button-row {\n  ma
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"button-row\">\n  <a mat-raised-button color=\"primary\" [routerLink]=\"['/products']\"><mat-icon>list</mat-icon></a>\n</div>\n<mat-card class=\"example-card\">\n  <mat-card-header>\n    <mat-card-title><h2>{{product.title}}</h2></mat-card-title>\n    <mat-card-subtitle>{{product.description}}</mat-card-subtitle>\n  </mat-card-header>\n  <mat-card-content>\n    <dl>\n      <dt>SKU:</dt>\n      <dd>{{product.sku}}</dd>\n      <dt>Model:</dt>\n      <dd>{{product.model}}</dd>\n      <dt>Material:</dt>\n      <dd>{{product.material}}</dd>\n      <dt>Price:</dt>\n      <dd>{{product.price}}</dd>\n      <dt>Coupon:</dt>\n      <dd>{{product.coupon}}</dd>\n      <dt>Update Date:</dt>\n      <dd>{{product.updated_date | date}}</dd>\n    </dl>\n  </mat-card-content>\n  <mat-card-actions>\n    <a mat-raised-button color=\"primary\" [routerLink]=\"['/product-edit', product._id]\"><mat-icon>edit</mat-icon></a>\n    <a mat-raised-button color=\"warn\" (click)=\"deleteProduct(product._id)\"><mat-icon>delete</mat-icon></a>\n  </mat-card-actions>\n</mat-card>\n"
+module.exports = "<div class=\"button-row\">\n  <a mat-raised-button color=\"primary\" [routerLink]=\"['/products']\"><mat-icon>list</mat-icon></a>\n</div>\n<mat-card class=\"example-card\">\n  <mat-card-header>\n    <mat-card-title><h2>{{product.title}}</h2></mat-card-title>\n    <mat-card-subtitle>{{product.description}}</mat-card-subtitle>\n  </mat-card-header>\n  <mat-card-content>\n    <dl>\n      <dt>SKU: </dt>\n      <dd>{{product.sku}}</dd>\n      <dt>Model: </dt>\n      <dd>{{product.model}}</dd>\n      <dt>Price: </dt>\n      <dd>{{product.price}}</dd>\n      <dt>Coupon: </dt>\n      <dd>{{product.coupon}}</dd>\n      <dt>Update Date: </dt>\n      <dd>{{product.updated_date | date}}</dd>\n      <dt>Small: </dt>\n      <dd>{{product.small}}</dd>\n      <dt>Medium: </dt>\n      <dd>{{product.medium}}</dd>\n      <dt>Large: </dt>\n      <dd>{{product.large}}</dd>\n      <dt>X-Large: </dt>\n      <dd>{{product.xlarge}}</dd>\n      <dt>Images:</dt>\n      <dd *ngFor=\"let item of product.images\">{{item.image}}</dd>\n    </dl>\n  </mat-card-content>\n  <mat-card-actions>\n    <a mat-raised-button color=\"primary\" [routerLink]=\"['/product-edit', product._id]\"><mat-icon>edit</mat-icon></a>\n    <a mat-raised-button color=\"warn\" (click)=\"deleteProduct(product._id)\"><mat-icon>delete</mat-icon></a>\n  </mat-card-actions>\n</mat-card>\n"
 
 /***/ }),
 
@@ -510,7 +508,7 @@ module.exports = ".example-form {\n  min-width: 150px;\n  max-width: 500px;\n  w
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"button-row\">\n  <a mat-raised-button color=\"primary\" (click)=\"productDetails()\">\n    <mat-icon>show</mat-icon>\n  </a>\n</div>\n<form [formGroup]=\"productForm\" (ngSubmit)=\"onFormSubmit(productForm.value)\">\n  <mat-form-field class=\"example-full-width\">\n    <input matInput placeholder=\"SKU\" formControlName=\"sku\" [errorStateMatcher]=\"matcher\">\n    <mat-error>\n      <span *ngIf=\"!productForm.get('sku').valid && productForm.get('sku').touched\">Please enter sku</span>\n    </mat-error>\n  </mat-form-field>\n  <mat-form-field class=\"example-full-width\">\n    <input matInput placeholder=\"Title\" formControlName=\"title\" [errorStateMatcher]=\"matcher\">\n    <mat-error>\n      <span *ngIf=\"!productForm.get('title').valid && productForm.get('title').touched\">Please enter product title</span>\n    </mat-error>\n  </mat-form-field>\n  <mat-form-field class=\"example-full-width\">\n    <input matInput placeholder=\"Model\" formControlName=\"model\" [errorStateMatcher]=\"matcher\">\n    <mat-error>\n      <span *ngIf=\"!productForm.get('model').valid && productForm.get('model').touched\">Please enter product model</span>\n    </mat-error>\n  </mat-form-field>\n  <mat-form-field class=\"example-full-width\">\n    <textarea matInput placeholder=\"Description\" formControlName=\"description\" [errorStateMatcher]=\"matcher\"></textarea>\n    <mat-error>\n      <span *ngIf=\"!productForm.get('description').valid && productForm.get('description').touched\">Please enter\n        product description</span>\n    </mat-error>\n  </mat-form-field>\n  <mat-form-field class=\"example-full-width\">\n    <input matInput placeholder=\"Material\" formControlName=\"material\" [errorStateMatcher]=\"matcher\">\n    <mat-error>\n      <span *ngIf=\"!productForm.get('material').valid && productForm.get('material').touched\">Please enter material</span>\n    </mat-error>\n  </mat-form-field>\n  <mat-form-field class=\"example-full-width\">\n    <input matInput placeholder=\"Color\" formControlName=\"color\" [errorStateMatcher]=\"matcher\">\n    <mat-error>\n      <span *ngIf=\"!productForm.get('color').valid && productForm.get('color').touched\">Please enter color</span>\n    </mat-error>\n  </mat-form-field>\n  <mat-form-field class=\"example-full-width\">\n    <input matInput placeholder=\"Price\" formControlName=\"price\" [errorStateMatcher]=\"matcher\">\n    <mat-error>\n      <span *ngIf=\"!productForm.get('price').valid && productForm.get('price').touched\">Please enter price</span>\n    </mat-error>\n  </mat-form-field>\n  <mat-form-field class=\"example-full-width\">\n    <input matInput placeholder=\"Coupon\" formControlName=\"coupon\" [errorStateMatcher]=\"matcher\">\n    <mat-error>\n      <span *ngIf=\"!productForm.get('coupon').valid && productForm.get('coupon').touched\">Please enter color</span>\n    </mat-error>\n  </mat-form-field>\n  <div class=\"button-row\">\n    <button type=\"submit\" [disabled]=\"!productForm.valid\" mat-raised-button color=\"primary\">\n      <mat-icon>save</mat-icon>\n    </button>\n  </div>\n</form>"
+module.exports = "<div class=\"button-row\">\n  <a mat-raised-button color=\"primary\" (click)=\"productDetails()\">\n    <mat-icon>show</mat-icon>\n  </a>\n</div>\n<form [formGroup]=\"productForm\" (ngSubmit)=\"onFormSubmit(productForm.value)\">\n  <mat-form-field class=\"example-full-width\">\n    <input matInput placeholder=\"SKU\" formControlName=\"sku\" [errorStateMatcher]=\"matcher\">\n    <mat-error>\n      <span *ngIf=\"!productForm.get('sku').valid && productForm.get('sku').touched\">Please enter sku</span>\n    </mat-error>\n  </mat-form-field>\n  <mat-form-field class=\"example-full-width\">\n    <input matInput placeholder=\"Title\" formControlName=\"title\" [errorStateMatcher]=\"matcher\">\n    <mat-error>\n      <span *ngIf=\"!productForm.get('title').valid && productForm.get('title').touched\">Please enter product\n        title</span>\n    </mat-error>\n  </mat-form-field>\n  <mat-form-field class=\"example-full-width\">\n    <input matInput placeholder=\"Model\" formControlName=\"model\" [errorStateMatcher]=\"matcher\">\n    <mat-error>\n      <span *ngIf=\"!productForm.get('model').valid && productForm.get('model').touched\">Please enter product\n        model</span>\n    </mat-error>\n  </mat-form-field>\n  <mat-form-field class=\"example-full-width\">\n    <textarea matInput placeholder=\"Description\" formControlName=\"description\" [errorStateMatcher]=\"matcher\"></textarea>\n    <mat-error>\n      <span *ngIf=\"!productForm.get('description').valid && productForm.get('description').touched\">Please enter\n        product description</span>\n    </mat-error>\n  </mat-form-field>\n  <mat-form-field class=\"example-full-width\">\n    <input matInput placeholder=\"Color\" formControlName=\"color\" [errorStateMatcher]=\"matcher\">\n    <mat-error>\n      <span *ngIf=\"!productForm.get('color').valid && productForm.get('color').touched\">Please enter color</span>\n    </mat-error>\n  </mat-form-field>\n  <mat-form-field class=\"example-full-width\">\n    <input matInput placeholder=\"Price\" formControlName=\"price\" [errorStateMatcher]=\"matcher\">\n    <mat-error>\n      <span *ngIf=\"!productForm.get('price').valid && productForm.get('price').touched\">Please enter price</span>\n    </mat-error>\n  </mat-form-field>\n  <mat-form-field class=\"example-full-width\">\n    <input matInput placeholder=\"Coupon\" formControlName=\"coupon\" [errorStateMatcher]=\"matcher\">\n    <mat-error>\n      <span *ngIf=\"!productForm.get('coupon').valid && productForm.get('coupon').touched\">Please enter color</span>\n    </mat-error>\n  </mat-form-field>\n  <mat-form-field class=\"example-full-width\">\n    <input matInput placeholder=\"Small\" formControlName=\"small\" [errorStateMatcher]=\"matcher\">\n    <mat-error>\n      <span *ngIf=\"!productForm.get('small').valid && productForm.get('small').touched\">Please enter\n        size small</span>\n    </mat-error>\n  </mat-form-field>\n  <mat-form-field class=\"example-full-width\">\n    <input matInput placeholder=\"Medium\" formControlName=\"medium\" [errorStateMatcher]=\"matcher\">\n    <mat-error>\n      <span *ngIf=\"!productForm.get('medium').valid && productForm.get('medium').touched\">Please enter\n        size medium</span>\n    </mat-error>\n  </mat-form-field>\n  <mat-form-field class=\"example-full-width\">\n    <input matInput placeholder=\"Large\" formControlName=\"large\" [errorStateMatcher]=\"matcher\">\n    <mat-error>\n      <span *ngIf=\"!productForm.get('large').valid && productForm.get('large').touched\">Please enter\n        size large</span>\n    </mat-error>\n  </mat-form-field>\n  <mat-form-field class=\"example-full-width\">\n    <input matInput placeholder=\"X-Large\" formControlName=\"xlarge\" [errorStateMatcher]=\"matcher\">\n    <mat-error>\n      <span *ngIf=\"!productForm.get('xlarge').valid && productForm.get('xlarge').touched\">Please enter\n        size x-large</span>\n    </mat-error>\n  </mat-form-field>\n  <mat-form-field *ngFor=\"let item of imageList; let i = index;\" class=\"example-full-width\">\n    <input matInput [ngModelOptions]=\"{standalone: true}\" [(ngModel)]=\"item.image\"\n      (ngModelChange)=\"changeInModelValue(item.image, i)\" placeholder=\"Image\">\n  </mat-form-field>\n  <div class=\"button-row\">\n    <button (click)=\"addNewImage()\" type=\"button\" mat-raised-button color=\"primary\">\n      <mat-icon>add_a_photo</mat-icon>\n    </button>\n  </div>\n  <div class=\"button-row\">\n    <button type=\"submit\" mat-raised-button color=\"primary\">\n      <mat-icon>save</mat-icon>\n    </button>\n  </div>\n</form>"
 
 /***/ }),
 
@@ -552,10 +550,15 @@ var BookEditComponent = /** @class */ (function () {
         this.title = '';
         this.description = '';
         this.model = '';
-        this.material = '';
         this.color = '';
         this.price = '';
         this.coupon = '';
+        this.small = '';
+        this.medium = '';
+        this.large = '';
+        this.xlarge = '';
+        this.inventory = [];
+        this.imageList = [];
     }
     BookEditComponent.prototype.ngOnInit = function () {
         this.getProduct(this.route.snapshot.params['id']);
@@ -564,36 +567,52 @@ var BookEditComponent = /** @class */ (function () {
             'title': [null, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required],
             'description': [null, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required],
             'model': [null, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required],
-            'material': [null, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required],
             'color': [null, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required],
             'price': [null, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required],
-            'coupon': [null, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required]
+            'coupon': [null, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required],
+            'small': [null, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required],
+            'medium': [null, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required],
+            'large': [null, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required],
+            'xlarge': [null, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required]
         });
     };
     BookEditComponent.prototype.getProduct = function (id) {
         var _this = this;
         this.api.getProduct(id).subscribe(function (data) {
             _this.id = data._id;
+            _this.imageList = data.images;
             _this.productForm.setValue({
                 sku: data.sku,
                 title: data.title,
                 description: data.description,
                 model: data.model,
-                material: data.material,
                 color: data.color,
                 price: data.price,
-                coupon: data.coupon
+                coupon: data.coupon,
+                small: data.small,
+                medium: data.medium,
+                large: data.large,
+                xlarge: data.xlarge
             });
         });
     };
     BookEditComponent.prototype.onFormSubmit = function (form) {
         var _this = this;
+        form.images = this.imageList;
         this.api.updateProduct(this.id, form)
             .subscribe(function (res) {
             var id = res['_id'];
             _this.router.navigate(['/product-details', id]);
         }, function (err) {
             console.log(err);
+        });
+    };
+    BookEditComponent.prototype.changeInModelValue = function (value, index) {
+        this.imageList[index].image = value;
+    };
+    BookEditComponent.prototype.addNewImage = function () {
+        this.imageList.push({
+            image: ''
         });
     };
     BookEditComponent.prototype.productDetails = function () {
@@ -632,7 +651,7 @@ module.exports = ".example-container {\n  display: flex;\n  flex-direction: colu
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"button-row\">\n  <a mat-raised-button color=\"primary\" [routerLink]=\"['/product-create']\"><mat-icon>add</mat-icon></a>\n</div>\n<div class=\"example-container mat-elevation-z8\">\n  <table mat-table #table [dataSource]=\"dataSource\">\n\n    <!--- Note that these columns can be defined in any order.\n          The actual rendered columns are set as a property on the row definition\" -->\n\n    <!-- Title Column -->\n    <ng-container matColumnDef=\"sku\">\n      <th mat-header-cell *matHeaderCellDef> SKU </th>\n      <td mat-cell *matCellDef=\"let element\" class=\"isbn-col\"> {{element.sku}} </td>\n    </ng-container>\n\n    <!-- Title Column -->\n    <ng-container matColumnDef=\"title\">\n      <th mat-header-cell *matHeaderCellDef> Title </th>\n      <td mat-cell *matCellDef=\"let element\"> {{element.title}} </td>\n    </ng-container>\n\n    <!-- Author Column -->\n    <ng-container matColumnDef=\"model\">\n      <th mat-header-cell *matHeaderCellDef> Model </th>\n      <td mat-cell *matCellDef=\"let element\"> {{element.model}} </td>\n    </ng-container>\n\n    <!-- Author Column -->\n    <ng-container matColumnDef=\"material\">\n      <th mat-header-cell *matHeaderCellDef> Material </th>\n      <td mat-cell *matCellDef=\"let element\"> {{element.material}} </td>\n    </ng-container>\n\n    <tr mat-header-row *matHeaderRowDef=\"displayedColumns\"></tr>\n    <tr mat-row *matRowDef=\"let row; columns: displayedColumns;\" [routerLink]=\"['/product-details/', row._id]\"></tr>\n  </table>\n</div>\n"
+module.exports = "<div class=\"button-row\">\n  <a mat-raised-button color=\"primary\" [routerLink]=\"['/product-create']\"><mat-icon>add</mat-icon></a>\n</div>\n<div class=\"example-container mat-elevation-z8\">\n  <table mat-table #table [dataSource]=\"dataSource\">\n\n    <!--- Note that these columns can be defined in any order.\n          The actual rendered columns are set as a property on the row definition\" -->\n\n    <!-- Title Column -->\n    <ng-container matColumnDef=\"sku\">\n      <th mat-header-cell *matHeaderCellDef> SKU </th>\n      <td mat-cell *matCellDef=\"let element\" class=\"isbn-col\"> {{element.sku}} </td>\n    </ng-container>\n\n    <!-- Title Column -->\n    <ng-container matColumnDef=\"title\">\n      <th mat-header-cell *matHeaderCellDef> Title </th>\n      <td mat-cell *matCellDef=\"let element\"> {{element.title}} </td>\n    </ng-container>\n\n    <!-- Author Column -->\n    <ng-container matColumnDef=\"model\">\n      <th mat-header-cell *matHeaderCellDef> Model </th>\n      <td mat-cell *matCellDef=\"let element\"> {{element.model}} </td>\n    </ng-container>\n\n    <ng-container matColumnDef=\"color\">\n        <th mat-header-cell *matHeaderCellDef> Color </th>\n        <td mat-cell *matCellDef=\"let element\"> {{element.color}} </td>\n      </ng-container>\n\n    <tr mat-header-row *matHeaderRowDef=\"displayedColumns\"></tr>\n    <tr mat-row *matRowDef=\"let row; columns: displayedColumns;\" [routerLink]=\"['/product-details/', row._id]\"></tr>\n  </table>\n</div>\n"
 
 /***/ }),
 
@@ -678,7 +697,7 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 var BookComponent = /** @class */ (function () {
     function BookComponent(api) {
         this.api = api;
-        this.displayedColumns = ['sku', 'title', 'model', 'material'];
+        this.displayedColumns = ['sku', 'title', 'model', 'color'];
         this.dataSource = new BookDataSource(this.api);
     }
     BookComponent.prototype.ngOnInit = function () {

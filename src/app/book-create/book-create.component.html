@@ -13,13 +13,15 @@
   <mat-form-field class="example-full-width">
     <input matInput placeholder="Title" formControlName="title" [errorStateMatcher]="matcher">
     <mat-error>
-      <span *ngIf="!productForm.get('title').valid && productForm.get('title').touched">Please enter product title</span>
+      <span *ngIf="!productForm.get('title').valid && productForm.get('title').touched">Please enter product
+        title</span>
     </mat-error>
   </mat-form-field>
   <mat-form-field class="example-full-width">
     <input matInput placeholder="Model" formControlName="model" [errorStateMatcher]="matcher">
     <mat-error>
-      <span *ngIf="!productForm.get('model').valid && productForm.get('model').touched">Please enter product model</span>
+      <span *ngIf="!productForm.get('model').valid && productForm.get('model').touched">Please enter product
+        model</span>
     </mat-error>
   </mat-form-field>
   <mat-form-field class="example-full-width">
@@ -27,12 +29,6 @@
     <mat-error>
       <span *ngIf="!productForm.get('description').valid && productForm.get('description').touched">Please enter
         product description</span>
-    </mat-error>
-  </mat-form-field>
-  <mat-form-field class="example-full-width">
-    <input matInput placeholder="Material" formControlName="material" [errorStateMatcher]="matcher">
-    <mat-error>
-      <span *ngIf="!productForm.get('material').valid && productForm.get('material').touched">Please enter material</span>
     </mat-error>
   </mat-form-field>
   <mat-form-field class="example-full-width">
@@ -53,18 +49,44 @@
       <span *ngIf="!productForm.get('coupon').valid && productForm.get('coupon').touched">Please enter color</span>
     </mat-error>
   </mat-form-field>
-  <!-- <div class="container">
-    <label class="mat-form-field-label">Images</label>
-    <button md-raised-button color="primary" (click)="fileInput.click()">Upload</button>
-    <input hidden type="file" #fileInput accept="image/*" (change)="handleFileSelect($event)">
-  </div> -->
-  <div class="row">
-    <div class="column" *ngFor="let item of imageList">
-      <img style="width:40%" src="data:image/jpg;base64,{{item.image}}" />
-    </div>
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Small" formControlName="small" [errorStateMatcher]="matcher">
+    <mat-error>
+      <span *ngIf="!productForm.get('small').valid && productForm.get('small').touched">Please enter
+        size small</span>
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Medium" formControlName="medium" [errorStateMatcher]="matcher">
+    <mat-error>
+      <span *ngIf="!productForm.get('medium').valid && productForm.get('medium').touched">Please enter
+        size medium</span>
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Large" formControlName="large" [errorStateMatcher]="matcher">
+    <mat-error>
+      <span *ngIf="!productForm.get('large').valid && productForm.get('large').touched">Please enter
+        size large</span>
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="X-Large" formControlName="xlarge" [errorStateMatcher]="matcher">
+    <mat-error>
+      <span *ngIf="!productForm.get('xlarge').valid && productForm.get('xlarge').touched">Please enter
+        size x-large</span>
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field *ngFor="let item of imageList; let i = index;" class="example-full-width">
+    <input matInput [ngModelOptions]="{standalone: true}" [(ngModel)]="item.image" (ngModelChange)="changeInModelValue(item.image, i)" placeholder="Image">
+  </mat-form-field>
+  <div class="button-row">
+    <button (click)="addNewImage()" type="button" mat-raised-button color="primary">
+      <mat-icon>add_a_photo</mat-icon>
+    </button>
   </div>
   <div class="button-row">
-    <button type="submit" [disabled]="!productForm.valid" mat-raised-button color="primary">
+    <button type="submit" mat-raised-button color="primary">
       <mat-icon>save</mat-icon>
     </button>
   </div>

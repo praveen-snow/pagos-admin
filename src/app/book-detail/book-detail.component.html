@@ -8,18 +8,26 @@
   </mat-card-header>
   <mat-card-content>
     <dl>
-      <dt>SKU:</dt>
+      <dt>SKU: </dt>
       <dd>{{product.sku}}</dd>
-      <dt>Model:</dt>
+      <dt>Model: </dt>
       <dd>{{product.model}}</dd>
-      <dt>Material:</dt>
-      <dd>{{product.material}}</dd>
-      <dt>Price:</dt>
+      <dt>Price: </dt>
       <dd>{{product.price}}</dd>
-      <dt>Coupon:</dt>
+      <dt>Coupon: </dt>
       <dd>{{product.coupon}}</dd>
-      <dt>Update Date:</dt>
+      <dt>Update Date: </dt>
       <dd>{{product.updated_date | date}}</dd>
+      <dt>Small: </dt>
+      <dd>{{product.small}}</dd>
+      <dt>Medium: </dt>
+      <dd>{{product.medium}}</dd>
+      <dt>Large: </dt>
+      <dd>{{product.large}}</dd>
+      <dt>X-Large: </dt>
+      <dd>{{product.xlarge}}</dd>
+      <dt>Images:</dt>
+      <dd *ngFor="let item of product.images">{{item.image}}</dd>
     </dl>
   </mat-card-content>
   <mat-card-actions>

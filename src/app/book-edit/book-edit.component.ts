@@ -10,50 +10,62 @@ import { FormControl, FormGroupDirective, FormBuilder, FormGroup, NgForm, Valida
 })
 export class BookEditComponent implements OnInit {
 
-  productForm: FormGroup;
   id:string = '';
-  sku:string='';
-  title:string='';
-  description:string='';
-  model:string='';
-  material:string='';
-  color:string='';
-  price: String='';
-  coupon: String='';
+  productForm: FormGroup;
+  sku: string = '';
+  title: string = '';
+  description: string = '';
+  model: string = '';
+  color: string = '';
+  price: String = '';
+  coupon: String = '';
+  small: string = '';
+  medium: string = '';
+  large: string = '';
+  xlarge: string = '';
   matcher: any;
+  inventory: any = [];
   constructor(private router: Router, private route: ActivatedRoute, private api: ApiService, private formBuilder: FormBuilder) { }
 
   ngOnInit() {
     this.getProduct(this.route.snapshot.params['id']);
     this.productForm = this.formBuilder.group({
-      'sku' : [null, Validators.required],
-      'title' : [null, Validators.required],
-      'description' : [null, Validators.required],
-      'model' : [null, Validators.required],
-      'material' : [null, Validators.required],
-      'color' : [null, Validators.required],
-      'price' : [null, Validators.required],
-      'coupon' : [null, Validators.required]
+      'sku': [null, Validators.required],
+      'title': [null, Validators.required],
+      'description': [null, Validators.required],
+      'model': [null, Validators.required],
+      'color': [null, Validators.required],
+      'price': [null, Validators.required],
+      'coupon': [null, Validators.required],
+      'small': [null, Validators.required],
+      'medium': [null, Validators.required],
+      'large': [null, Validators.required],
+      'xlarge': [null, Validators.required]
     });
   }
 
   getProduct(id) {
     this.api.getProduct(id).subscribe(data => {
       this.id = data._id;
+      this.imageList = data.images;
       this.productForm.setValue({
         sku: data.sku,
         title: data.title,
         description: data.description,
         model: data.model,
-        material: data.material,
         color: data.color,
         price: data.price,
-        coupon: data.coupon
+        coupon: data.coupon,
+        small: data.small,
+        medium: data.medium,
+        large: data.large,
+        xlarge: data.xlarge
       });
     });
   }
 
-  onFormSubmit(form:NgForm) {
+  onFormSubmit(form:any) {
+    form.images = this.imageList;
     this.api.updateProduct(this.id, form)
       .subscribe(res => {
           let id = res['_id'];
@@ -62,6 +74,18 @@ export class BookEditComponent implements OnInit {
           console.log(err);
         }
       );
+  }
+
+  imageList: any = [];
+
+  changeInModelValue(value, index) {
+    this.imageList[index].image = value;
+  }
+
+  addNewImage() {
+    this.imageList.push({
+      image: ''
+    });
   }
 
   productDetails() {

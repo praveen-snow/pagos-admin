@@ -19,9 +19,9 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'dist/pagos-product')));
 app.use('/products', express.static(path.join(__dirname, 'dist/pagos-product')));
-app.use('/product-details/:id', express.static(path.join(__dirname, 'dist/pagos-product')));
-app.use('/product-create', express.static(path.join(__dirname, 'dist/pagos-product')));
-app.use('/product-edit/:id', express.static(path.join(__dirname, 'dist/pagos-product')));
+// app.use('/product-details/:id', express.static(path.join(__dirname, 'dist/pagos-product')));
+// app.use('/product-create', express.static(path.join(__dirname, 'dist/pagos-product')));
+// app.use('/product-edit/:id', express.static(path.join(__dirname, 'dist/pagos-product')));
 app.use('/api', apiRouter);
 
 // catch 404 and forward to error handler

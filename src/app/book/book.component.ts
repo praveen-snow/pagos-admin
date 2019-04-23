@@ -11,7 +11,7 @@ import { Observable } from 'rxjs';
 export class BookComponent implements OnInit {
 
   products: any;
-  displayedColumns = ['sku', 'title', 'model', 'material'];
+  displayedColumns = ['sku', 'title', 'model', 'color'];
   dataSource = new BookDataSource(this.api);
 
   constructor(private api: ApiService) { }
