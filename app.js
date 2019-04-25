@@ -31,7 +31,7 @@ app.use(express.urlencoded({
   extended: false
 }));
 app.use(express.static(path.join(__dirname, 'dist/pagos-product')));
-// app.use('/login', express.static(path.join(__dirname, 'dist/pagos-product')));
+app.use('/login', express.static(path.join(__dirname, 'dist/pagos-product')));
 // app.use('/product-details/:id', express.static(path.join(__dirname, 'dist/pagos-product')));
 // app.use('/product-create', express.static(path.join(__dirname, 'dist/pagos-product')));
 // app.use('/product-edit/:id', express.static(path.join(__dirname, 'dist/pagos-product')));
