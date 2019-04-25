@@ -1,7 +1,15 @@
 .example-card {
-  max-width: 500px;
+  width: 50%;
 }
 
 .button-row {
   margin: 10px 0;
+}
+
+.cardWrapper{
+  display: flex;
+}
+
+.marginRight{
+  margin-right: 10px;
 }

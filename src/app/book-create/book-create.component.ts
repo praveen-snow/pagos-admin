@@ -44,6 +44,10 @@ export class BookCreateComponent implements OnInit {
     });
   }
 
+  deleteImage(imageIndex){
+    this.imageList.splice(imageIndex, 1) 
+  }
+
   checkProperties(obj) {
     for (var key in obj) {
       if (obj[key] !== null && obj[key] != "")

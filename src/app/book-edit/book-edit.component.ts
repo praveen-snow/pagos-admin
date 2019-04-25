@@ -82,6 +82,10 @@ export class BookEditComponent implements OnInit {
     this.imageList[index].image = value;
   }
 
+  deleteImage(imageIndex){
+    this.imageList.splice(imageIndex, 1) 
+  }
+
   addNewImage() {
     this.imageList.push({
       image: ''
