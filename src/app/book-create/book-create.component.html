@@ -83,8 +83,9 @@
     <mat-icon matSuffix (click)="deleteImage(i)">delete</mat-icon>
   </mat-form-field>
   <div class="row">
-    <div class="column" *ngFor="let item of imageList; let i = index;">
+    <div class="column imageWrapper" *ngFor="let item of imageList; let i = index;">
       <img *ngIf="item.image !== ''" src="{{'http://drive.google.com/uc?id=' + item.image}}">
+      <span *ngIf="item.image !== ''" class="imageText">{{i + 1}}</span>
     </div>
   </div>
   <div class="button-row">

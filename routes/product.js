@@ -1,15 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var mongoose = require('mongoose');
 var Product = require('../models/Product.js');
-var bodyParser = require('body-parser');
-
-express().use( bodyParser.json({limit: '50mb'}) );
-express().use(bodyParser.urlencoded({
-  limit: '50mb',
-  extended: true,
-  parameterLimit:50000
-}));
 
 /* GET ALL ProductS */
 router.get('/', function(req, res, next) {

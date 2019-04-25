@@ -4,9 +4,10 @@ import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http
 import { catchError, tap, map } from 'rxjs/operators';
 
 const httpOptions = {
-  headers: new HttpHeaders({'Content-Type': 'application/json'})
+  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 };
 const apiUrl = "/api";
+const loginUrl = '/login/user';
 
 @Injectable({
   providedIn: 'root'
@@ -32,7 +33,7 @@ export class ApiService {
 
   private extractData(res: Response) {
     let body = res;
-    return body || { };
+    return body || {};
   }
 
   getProducts(): Observable<any> {
@@ -53,6 +54,18 @@ export class ApiService {
       .pipe(
         catchError(this.handleError)
       );
+  }
+
+  authenticate(data): Observable<any> {
+    return this.http.post(loginUrl, data, httpOptions)
+      .pipe(
+        catchError(this.handleError)
+      );
+  }
+
+  logout() {
+    // remove user from local storage to log user out
+    localStorage.removeItem('currentUser');
   }
 
   updateProduct(id: string, data): Observable<any> {

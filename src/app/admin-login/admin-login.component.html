@@ -1,0 +1,24 @@
+<div class="wrapper">
+    <div class="container">
+      <h1>Hello PAGOS</h1>
+      <form class="form">
+        <input type="text" placeholder="Username" [(ngModel)]="userName"
+        (ngModelChange)="changeInModelValue(userName, 'user')" [ngModelOptions]="{standalone: true}">
+        <input type="password" placeholder="Password" [(ngModel)]="password"
+        (ngModelChange)="changeInModelValue(password, 'password')" [ngModelOptions]="{standalone: true}">
+        <button type="submit" (click)="authenticate()" id="login-button">Login</button>
+      </form>
+    </div>
+    <ul class="bg-bubbles">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+  </div>

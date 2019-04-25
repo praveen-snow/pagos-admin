@@ -20,9 +20,18 @@ import {
   MatIconModule,
   MatButtonModule,
   MatCardModule,
-  MatFormFieldModule } from "@angular/material";
+  MatFormFieldModule
+} from "@angular/material";
+import { AdminLoginComponent } from './admin-login/admin-login.component';
+import { JwtInterceptorProvider } from './jwt-interceptor';
+import { ApiService } from './api.service';
 
 const appRoutes: Routes = [
+  {
+    path: 'login',
+    component: AdminLoginComponent,
+    data: { title: 'Admin Login' }
+  }, 
   {
     path: 'products',
     component: BookComponent,
@@ -43,8 +52,9 @@ const appRoutes: Routes = [
     component: BookEditComponent,
     data: { title: 'Edit Product' }
   },
-  { path: '',
-    redirectTo: '/products',
+  {
+    path: '',
+    redirectTo: '/login',
     pathMatch: 'full'
   }
 ];
@@ -55,7 +65,8 @@ const appRoutes: Routes = [
     BookComponent,
     BookDetailComponent,
     BookCreateComponent,
-    BookEditComponent
+    BookEditComponent,
+    AdminLoginComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
@@ -74,7 +85,7 @@ const appRoutes: Routes = [
     MatCardModule,
     MatFormFieldModule
   ],
-  providers: [],
+  providers: [JwtInterceptorProvider,ApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

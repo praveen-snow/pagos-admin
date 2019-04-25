@@ -46,7 +46,7 @@
       <mat-card>{{product.large}}</mat-card>
     </mat-card>
     <mat-card>
-      <p>S XL</p>
+      <p>Size XL</p>
       <mat-card>{{product.xlarge}}</mat-card>
     </mat-card>
     <mat-card>
@@ -59,8 +59,9 @@
   <p>Images</p>
   <mat-card>
     <div class="row">
-      <div class="column" *ngFor="let item of product.images; let i = index;">
+      <div class="column imageWrapper" *ngFor="let item of product.images; let i = index;">
         <img *ngIf="item.image !== ''" src="{{'http://drive.google.com/uc?id=' + item.image}}">
+        <span *ngIf="item.image !== ''" class="imageText">{{i + 1}}</span>
       </div>
     </div>
   </mat-card>

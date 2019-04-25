@@ -1,23 +1,34 @@
 /* You can add global styles to this file, and also import other style files */
 
-body { margin: 0 5%; }
+body {
+  margin: 0 5%;
+}
 
 * {
-    box-sizing: border-box;
-  }
-  
-  .column {
-    float: left;
-    padding: 5px;
-  }
-  
-  /* Clearfix (clear floats) */
-  .row::after {
-    content: "";
-    clear: both;
-    display: table;
-  }
-  
-  img {
-    height: 130px;
-  }
+  box-sizing: border-box;
+}
+
+.column {
+  float: left;
+  padding: 5px;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+img {
+  height: 130px;
+}
+
+.imageWrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.imageText {
+  text-align: center;
+}
