@@ -1,1 +1,1 @@
-web: ng build --prod --configuration production && node ./bin/www
+web: node ./bin/www
