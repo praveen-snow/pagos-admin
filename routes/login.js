@@ -7,6 +7,8 @@ var jwt = require('jsonwebtoken');
 var bcrypt = require('bcryptjs');
 var Q = require('q');
 
+var sanitize = require('mongo-sanitize');
+
 /* authenticate login user */
 router.post('/user', function (req, res, next) {
     // Login.find(function (err, products) {
@@ -31,8 +33,8 @@ router.post('/user', function (req, res, next) {
 function authenticate(username, password) {
     var deferred = Q.defer();
     Login.findOne({
-        "username": username,
-        "password":password
+        username: sanitize(username),
+        password: sanitize(password)
     }, function (err, user) {
         if (err) deferred.reject(err.name + ': ' + err.message);
 
